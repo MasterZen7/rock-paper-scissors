@@ -1,1 +1,1 @@
-Rock paper scissors game played from the browser console.
+Rock paper scissors game played from the browser console. Live page: https://masterzen7.github.io/rock-paper-scissors/
