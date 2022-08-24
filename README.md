@@ -1,1 +1,1 @@
-Rock paper scissors game played made with JavaScript.
+Rock paper scissors game played made with JavaScript.Live page: https://masterzen7.github.io/rock-paper-scissors/
