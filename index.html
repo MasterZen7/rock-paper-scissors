@@ -6,16 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Rock paper scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap&display=swap" rel="stylesheet">
+    <title>Rock paper scissors game</title>
 </head>
 
 <body>
     <header>
-        <h1>Rock paper scissors</h1>
+        <h1>Rock Paper Scissors</h1>
     </header>
     <main>
-        <p>Rock, paper, scissors game played from the browser console</p>
+        <h3>Game of rock paper scissors against computer</h3>
+        <p id="choice">Make your choice:</p>
+        <section>
+            <div id="selection">
+                <img src="./images/rock.png" alt="rock" id="rock">
+                <img src="./images/paper.png" alt="paper" id="paper">
+                <img src="./images/scissors.png" alt="scissors" id="scissors">
+            </div>
+        </section>
+
+        <section>
+            <div id="score">
+                <p>Player: <span id="playerPoints">0</span></p>
+                <p>Computer: <span id="computerPoints">0</span></p>
+            </div>
+        </section>
+
+        <section>
+            <div id="results">
+                <div id="resultsContainer"></div>
+            </div>
+            <div id="restartGame">
+                <button>Play again?</button>
+            </div>
+        </section>
+
     </main>
+
+    <footer>
+        <p><a href="https://github.com/MasterZen7">MasterZen7</a> &#169; 2022</p>
+    </footer>
 
     <script src="script.js"></script>
 

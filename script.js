@@ -1,5 +1,13 @@
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+const playerPoints = document.querySelector('#playerPoints');
+const computerPoints = document.querySelector('#computerPoints');
+const result = document.querySelector('#resultsContainer');
+const button =document.querySelector('button');
 let playerScore = 0;
 let computerScore = 0;
+
 
 const computerChoice = () => {
     const choice = ['rock', 'paper', 'scissors'];
@@ -7,31 +15,81 @@ const computerChoice = () => {
     return choice [randomChoice]
 }
 
+
 const playRound = (playerSelection, computerSelection) => {
+    if (playerScore < 5 && computerScore < 5)
     if (playerSelection === computerSelection) {
-        return `Its a tie! You both picked ${playerSelection}`
+        result.textContent = `Tie! You both picked ${playerSelection}`
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        computerScore ++
-        return `You lose! Paper covers rock`
+        result.textContent = `You lose! Computers paper covers your rock`
+        computerPoints.textContent = (computerScore += 1)
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        playerScore ++
-        return `You win! Rock crushes scissors`
+        result.textContent = `You win! Your rock crushes computers scissors`
+        playerPoints.textContent = (playerScore += 1)
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        computerScore ++
-        return `You lose! Scissors cut paper`
+        result.textContent = `You lose! Computers scissors cut your paper`
+        computerPoints.textContent = (computerScore += 1)
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        playerScore ++
-        return `You win! Paper covers rock`
+        result.textContent = `You win! Your paper covers computers rock`
+        playerPoints.textContent = (playerScore += 1)
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        computerScore ++
-        return `You lose! Rock crushes scissors`
+        result.textContent = `You lose! Computers rock crushes your scissors`
+        computerPoints.textContent = (computerScore += 1)
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        playerScore ++
-        return `You win! Scissors cut paper`
+        result.textContent = `You win! Your scissors cut computers paper`
+        playerPoints.textContent = (playerScore += 1)
     }
 }
 
-const game = () => {
+
+const checkWinner = (playerScore, computerScore) => {
+    if (playerScore == 5) {
+        result.textContent = `You win! You beat the computer ${playerScore} - ${computerScore}`
+        result.style.color = 'lightGreen'
+        button.style.visibility = 'visible'
+    } else if (computerScore == 5) {
+        result.textContent = `You lose! Computer beat you ${computerScore} - ${playerScore}`
+        result.style.color = 'red'
+        button.style.visibility = 'visible'
+    }
+}
+
+
+rock.addEventListener('click', () => {
+    playerSelection = 'rock'
+    computerSelection = computerChoice();
+    playRound(playerSelection, computerSelection)
+    checkWinner(playerScore, computerScore)
+})
+
+
+paper.addEventListener('click', () => {
+    playerSelection = 'paper'
+    computerSelection = computerChoice();
+    playRound(playerSelection, computerSelection)
+    checkWinner(playerScore, computerScore)
+})
+
+
+scissors.addEventListener('click', () => {
+    playerSelection = 'scissors'
+    computerSelection = computerChoice();
+    playRound(playerSelection, computerSelection)
+    checkWinner(playerScore, computerScore)
+})
+
+button.addEventListener('click', () => {
+    playerScore = 0
+    playerPoints.textContent = playerScore
+    computerScore = 0
+    computerPoints.textContent = computerScore
+    result.textContent = ''
+    button.style.visibility = 'hidden'
+    result.style.color = ''
+})
+
+
+/* const game = () => {
     for (let i = 0; i < 5; i++) {
         const playerSelection = prompt('Choose rock, paper or scissors').toLowerCase();
         const computerSelection = computerChoice();
@@ -47,3 +105,4 @@ const game = () => {
 }
 
 console.log(game())
+ */
