@@ -87,22 +87,3 @@ button.addEventListener('click', () => {
     button.style.visibility = 'hidden'
     result.style.color = ''
 })
-
-
-/* const game = () => {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt('Choose rock, paper or scissors').toLowerCase();
-        const computerSelection = computerChoice();
-        console.log(playRound(playerSelection, computerSelection))
-    }
-    if (playerScore > computerScore) {
-    return `You won! You beat the computer`
-    } else if (playerScore < computerScore) {
-        return `You lose! Computer beat you`
-    } else {
-        return `Its a tie!`
-    }
-}
-
-console.log(game())
- */
