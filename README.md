@@ -1,8 +1,8 @@
 # Rock paper scissors
 
 ## About
-Rock paper scissors game played against computer.
-First to win rounds wins game.
+Rock paper scissors game played against computer. \
+First to win five rounds wins game.
 
 ## Technologies used
 HTML5, CSS3, JavaScript
